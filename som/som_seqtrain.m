@@ -243,7 +243,10 @@ function [sMap, sTrain] = som_seqtrain(sMap, D, varargin)
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Check arguments
 
-error(nargchk(2, Inf, nargin));  % check the number of input arguments
+#error(nargchk(2, Inf, nargin));  % check the number of input arguments
+
+#replace nargchk using narginchk
+narginchk(2,Inf);% check the number of input arguments
 
 % map 
 struct_mode = isstruct(sMap);
